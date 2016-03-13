@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Animation: Unfold</title>
+    <meta name="description" content="Animation: Unfold - A-Frame">
+ <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe.min.js"></script>
+  <script src="https://rawgit.com/ngokevin/aframe-text-component/master/dist/aframe-text-component.min.js"></script>
+      <script src="fonts/gentilis_bold.typeface.js"></script>
+    <script src="fonts/gentilis_regular.typeface.js"></script>
+    <script src="fonts/helvetiker_bold.typeface.js"></script>
+    <script src="fonts/helvetiker_regular.typeface.js"></script>
+    <script src="fonts/optimer_bold.typeface.js"></script>
+	<script src="fonts/optimer_regular.typeface.js"></script>
+
+
+  </head>
+  <body>
+  	
+    <a-scene>
+     <a-assets>
+      <a-mixin id="font1" text="font: gentilis" style="bold"></a-mixin>
+      <a-mixin id="font2" text="font: gentilis"></a-mixin>
+      <a-mixin id="font3" text="font: helvetiker" style="bold"></a-mixin>
+      <a-mixin id="font4" text="font: helvetiker"></a-mixin>
+      <a-mixin id="font5" text="font: optimer" style="bold"></a-mixin>
+      <a-mixin id="font6" text="font: optimer"></a-mixin>
+    </a-assets>
+    <a-entity position="-6 0 0" mixin="font1" text="text: Akshay!" material="color: #3281C5"></a-entity>
+<a-entity position="-1 0 0" mixin="font3" text="text: Shibani!" material="color: #C57FB1"></a-entity>
+<a-entity position="4 0 0" mixin="font5" text="text: Shonali!" material="color: #E88515"></a-entity>
+
+<a-entity position="-1 0 -5" mixin="font5" text="text: Stand up kab hai?" material="color: #1FA863"></a-entity>
+<a-sky color="#AAD5C8"></a-sky>
+
+</body>
+</html>

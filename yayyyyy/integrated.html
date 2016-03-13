@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ViRealize</title>
+    <meta name="description" content="ViRealize!">
+ <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe.min.js"></script>
+  <script src="https://rawgit.com/ngokevin/aframe-text-component/master/dist/aframe-text-component.min.js"></script>
+<script src="fonts/gentilis_bold.typeface.js"></script>
+    <script src="fonts/gentilis_regular.typeface.js"></script>
+    <script src="fonts/helvetiker_bold.typeface.js"></script>
+    <script src="fonts/helvetiker_regular.typeface.js"></script>
+    <script src="fonts/optimer_bold.typeface.js"></script>
+  <script src="fonts/optimer_regular.typeface.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+     <a-assets>
+      <a-mixin id="font1" text="font: gentilis" style="bold"></a-mixin>
+      <a-mixin id="font2" text="font: gentilis"></a-mixin>
+      <a-mixin id="font3" text="font: helvetiker" style="bold"></a-mixin>
+      <a-mixin id="font4" text="font: helvetiker"></a-mixin>
+      <a-mixin id="font5" text="font: optimer" style="bold"></a-mixin>
+      <a-mixin id="font6" text="font: optimer"></a-mixin>
+    </a-assets>
+
+  <a-curvedimage src="images/LasVegasStripNight.jpg" opacty="1" radius="75"  height="100" theta-length="360" position="0 0 0" scale="1 1 1">
+     
+      </a-curvedimage>
+
+      <!-- A series of nested boards that unfold one by one -->
+   <a-entity position="-15 0 -10" mixin="font1" text="text: TIME" material="color: #3281C5">
+      <a-animation  attribute="position" to="- 4.5 -10" dur="2000" fill="forwards"></a-animation>
+ </a-entity>
+
+
+      <a-entity position="-8 0 -10" scale="1 1 1" opacity="0.1">
+
+        <!-- Animations rotate and position the group for a bit of extra visual flair -->
+        <a-animation  attribute="position" to="-8 4.5 -10" dur="2000" fill="forwards"></a-animation>
+        <a-animation attribute="rotation" from="0 0 0" to="0 0 0" dur="2500" fill="forwards"></a-animation>
+
+        <!-- Translate and position are used to set the "hinge" of each board to it's top edge  -->
+        <a-cube src="images/blue-last_month.jpg" width="6" height="1" depth=".05" translate="-8 -0.5 0" >
+          <a-animation attribute="rotation" from="-90 0 0" to="0 0 0" dur="2500" fill="forwards"></a-animation>
+
+          <a-cube src="images/green-last_week.jpg" position="-8 -1 0" width="6" height="1" depth=".05" translate="0 -0.5 0" >
+            <a-animation attribute="rotation" from="-175 0 0" to="0 0 0" dur="2500" begin="250" fill="both"></a-animation>
+
+            <a-cube src="images/red-last_24_hrs.jpg" position="0 -1 0" width="6" height="1" depth=".05" translate="0 -0.5 0" >
+              <a-animation attribute="rotation" from="-180 0 0" to="0 0 0" dur="2500" begin="500" fill="both"></a-animation>
+
+                <a-cube src="images/blue-last_month.jpg" position="0 -1 0" width="6" height="1" depth=".05" translate="0 -0.5 0" >
+                  <a-animation attribute="rotation" from="-180 0 0" to="0 0 0" dur="2500" begin="750" fill="both"></a-animation>
+
+                  <a-cube src="images/green-last_week.jpg" position="0 -1 0" width="6" height="1" depth=".05" translate="0 -0.5 0" >
+                    <a-animation attribute="rotation" from="-180 0 0" to="0 0 0" dur="2500" begin="1000" fill="both"></a-animation>
+
+                  </a-cube>
+                </a-cube>
+            </a-cube>
+          </a-cube>
+        </a-cube>
+
+      </a-entity>
+
+    <a-entity position="8 0 -10" scale="1 1 1" opacity="0.1">
+
+
+        <!-- Animations rotate and position the group for a bit of extra visual flair -->
+        <a-animation attribute="position" to="8 4.5 -10" dur="2000" fill="forwards"></a-animation>
+        <a-animation attribute="rotation" from="0 0 0" to="0 0 0" dur="2500" fill="forwards"></a-animation>
+
+        <!-- Translate and position are used to set the "hinge" of each board to it's top edge  -->
+        <a-box src="images/theme1.jpg" width="6" height="1" depth=".05" translate="8 -0.5 0" >
+          <a-animation attribute="rotation" from="-90 0 0" to="0 0 0" dur="2500" fill="forwards"></a-animation>
+
+          <a-cube src="images/theme14.jpg" position="8 -1 0" width="6" height="1" depth=".05" translate="0 -0.5 0" >
+            <a-animation attribute="rotation" from="-175 0 0" to="0 0 0" dur="2500" begin="250" fill="both"></a-animation>
+
+            <a-cube src="images/theme11.jpg" position="0 -1 0" width="6" height="1" depth=".05" translate="0 -0.5 0" >
+              <a-animation attribute="rotation" from="-180 0 0" to="0 0 0" dur="2500" begin="500" fill="both"></a-animation>
+
+                <a-cube src="images/theme13.jpg" position="0 -1 0" width="6" height="1" depth=".05" translate="0 -0.5 0" >
+                  <a-animation attribute="rotation" from="-180 0 0" to="0 0 0" dur="2500" begin="750" fill="both"></a-animation>
+
+                  <a-cube src="images/theme12.jpg" position="0 -1 0" width="6" height="1" depth=".05" translate="0 -0.5 0" >
+                    <a-animation attribute="rotation" from="-180 0 0" to="0 0 0" dur="2500" begin="1000" fill="both"></a-animation>
+
+                  </a-cube>
+                </a-cube>
+            </a-cube>
+          </a-cube>
+        </a-box>
+
+      </a-entity>
+
+<a-entity>
+<a-image src="images/VR.png" width="70" height="35" scale=".3 .3 .3">
+        <a-animation attribute="position" from="0 2 -10" to="0 2 -400" begin="0" dur="4000" ></a-animation>
+      </a-image>
+</entity>
+
+
+<a-entity>
+<a-curvedimage position="0 0 0" src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=AIzaSyAZW1l5YHI1DBD6JiBXk69YWzge-_MEdHU"  height="35" scale=".8 .8 .8" opacity="0.75" radius="10" theta-length="72">
+       
+      </a-curvedimage>
+</entity>
+
+<a-entity text="text:WORLD MAP" mixin="font3" position="-2 -5 -10" material="color: #566E65">
+</entity>
+      <a-sky color="#000000"></a-sky>
+    
+
+    </a-scene>
+  </body>
+</html>
